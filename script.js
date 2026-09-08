@@ -4,7 +4,6 @@ const mediaType = document.getElementById("mediaType");
 const results = document.getElementById("results");
 const loading = document.getElementById("loading");
 
-
 // LOADING
 
 function showLoading() {
@@ -14,7 +13,6 @@ function showLoading() {
 function hideLoading() {
   loading.classList.remove("active");
 }
-
 
 // SEARCH
 
@@ -63,7 +61,6 @@ searchForm.addEventListener("submit", async (event) => {
   }
 });
 
-
 // DISPLAY RESULTS
 
 function displayResults(data, type) {
@@ -80,14 +77,29 @@ function displayResults(data, type) {
     card.className = "result-card";
 
     if (type === "photos") {
+
       card.innerHTML = `
         <img src="${item.webformatURL}" alt="${item.tags}">
         <p>${item.tags}</p>
       `;
+
     } else {
+
+      // Try medium first, then smaller versions
+      const videoUrl =
+        item.videos?.medium?.url ||
+        item.videos?.small?.url ||
+        item.videos?.tiny?.url;
+
+      // Skip the result if it has no usable video
+      if (!videoUrl) {
+        return;
+      }
+
       card.innerHTML = `
         <video controls>
-          <source src="${item.videos.medium.url}" type="video/mp4">
+          <source src="${videoUrl}" type="video/mp4">
+          Your browser does not support video playback.
         </video>
         <p>${item.tags}</p>
       `;
@@ -96,7 +108,6 @@ function displayResults(data, type) {
     results.appendChild(card);
   });
 }
-
 
 // CHALLENGE BUTTONS
 
