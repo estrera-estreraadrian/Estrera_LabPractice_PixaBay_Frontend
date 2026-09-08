@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="main-page">
+
+    <h1>Search Media</h1>
+
+    <form class="search-bar" id="searchForm">
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search for anything..."
+        aria-label="Search"
+      >
+
+      <select id="mediaType" aria-label="Choose media type">
+        <option value="photos">Photos</option>
+        <option value="videos">Videos</option>
+      </select>
+
+      <button type="submit">Search</button>
+    </form>
+
+
+    <div class="challenges">
+      <button type="button" data-challenge="rocket">
+        🚀 Rocket Launch
+      </button>
+
+      <button type="button" data-challenge="basketball">
+        🏀 Basketball
+      </button>
+
+      <button type="button" data-challenge="forest">
+        🌲 Forest
+      </button>
+
+      <button type="button" data-challenge="road-forest">
+        🛣️ Road Forest
+      </button>
+    </div>
+
+
+    <div id="loading" class="loading">
+      Loading results...
+    </div>
+
+
+    <section id="results" class="results"></section>
+
+  </main>
+
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
