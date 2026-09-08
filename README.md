@@ -24,12 +24,12 @@ A config.sample.js file is included as a template for creating your own config.j
 Clone the repository:
 git clone git@github.com:YOUR-USERNAME/YOUR-REPOSITORY.git
 
-> Open the project folder.
+- Open the project folder.
 
-> Create config.js by copying config.sample.js.
+- Create config.js by copying config.sample.js.
 
-> Replace the placeholder API key with your real Pixabay API key.
+- Replace the placeholder API key with your real Pixabay API key.
 
-> Open index.html in your browser.
+- Open index.html in your browser.
 
 The website should now be ready to use. Enjoy!
